@@ -3,8 +3,8 @@ use std::cmp::Ordering;
 use rand::Rng;
 
 fn main() {
-    let secret_num = rand::thread_rng().gen_range(1, 10);
-    let mut count = 0;
+    let secret_num: u8 = rand::thread_rng().gen_range(1, 10);
+    let mut count: u8 = 0;
 
     loop {
         if count == 0 {
@@ -36,7 +36,7 @@ fn main() {
             Ordering::Less => println!("too smoll."),
             Ordering::Greater => println!("too beeg."),
             Ordering::Equal => {
-                println!("spot on. it took you {} goes.", count);
+                println!("spot on. it took you {} guesses.", count);
                 break;
             }
         }
